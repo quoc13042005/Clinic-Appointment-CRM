@@ -1,0 +1,4 @@
+USE web_clinic_final;
+INSERT INTO users (name, email, password_hash, role) VALUES ('Admin User', 'admin@clinic.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'admin') ON DUPLICATE KEY UPDATE name=name;
+INSERT INTO patients (name, id_card, phone, date_of_birth, address) VALUES ('Nguyen Van A', '079012345678', '0901234567', '1990-01-01', 'HCM') ON DUPLICATE KEY UPDATE name=name;
+INSERT INTO appointments (appointment_code, patient_id, doctor_name, appointment_time, status) VALUES ('APT-2026-0001', 1, 'Dr. John Doe', '2026-07-10 09:00:00', 'scheduled') ON DUPLICATE KEY UPDATE appointment_code=appointment_code;
