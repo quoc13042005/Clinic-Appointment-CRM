@@ -86,7 +86,16 @@ $routes = [
 $method = $_SERVER['REQUEST_METHOD'];
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-if (!isset($routes[$method])) {
+// Check if path exists in any method to determine 405 vs 404
+$pathExistsInAnyMethod = false;
+foreach ($routes as $m => $paths) {
+    if (isset($paths[$path])) {
+        $pathExistsInAnyMethod = true;
+        break;
+    }
+}
+
+if ($pathExistsInAnyMethod && !isset($routes[$method][$path])) {
     http_response_code(405);
     render('errors/405', ['title' => '405 Method Not Allowed']);
     exit;
