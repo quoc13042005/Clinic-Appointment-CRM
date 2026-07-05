@@ -1,0 +1,1 @@
+<div style="text-align: center; margin-top: 50px;"><h1 style="font-size: 50px;">500</h1><h2>Internal Server Error</h2><p style="color:red;"><?= $error ?? '' ?></p><a href="/" class="btn">Về trang chủ</a></div>

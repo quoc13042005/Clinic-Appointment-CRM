@@ -1,0 +1,1 @@
+<div style="text-align: center; margin-top: 50px;"><h1 style="font-size: 50px;">405</h1><h2>Method Not Allowed</h2><a href="/" class="btn">Về trang chủ</a></div>
