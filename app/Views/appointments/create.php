@@ -1,0 +1,9 @@
+<h1>Create Appointment</h1>
+<form action="/appointments/store" method="POST" style="max-width: 600px; background: white; padding: 20px; border-radius: 8px;">
+    <div class="form-group"><label>Appointment Code</label><input type="text" name="appointment_code" value="<?= e(old('appointment_code')) ?>"><?php if (isset($errors['appointment_code'])): ?><div class="text-danger"><?= e($errors['appointment_code']) ?></div><?php endif; ?></div>
+    <div class="form-group"><label>Patient ID</label><input type="number" name="patient_id" value="<?= e(old('patient_id')) ?>"><?php if (isset($errors['patient_id'])): ?><div class="text-danger"><?= e($errors['patient_id']) ?></div><?php endif; ?></div>
+    <div class="form-group"><label>Doctor Name</label><input type="text" name="doctor_name" value="<?= e(old('doctor_name')) ?>"><?php if (isset($errors['doctor_name'])): ?><div class="text-danger"><?= e($errors['doctor_name']) ?></div><?php endif; ?></div>
+    <div class="form-group"><label>Appointment Time</label><input type="datetime-local" name="appointment_time" value="<?= e(old('appointment_time')) ?>"><?php if (isset($errors['appointment_time'])): ?><div class="text-danger"><?= e($errors['appointment_time']) ?></div><?php endif; ?></div>
+    <div class="form-group"><label>Status</label><select name="status"><option value="scheduled" <?= old('status') === 'scheduled' ? 'selected' : '' ?>>Scheduled</option><option value="completed" <?= old('status') === 'completed' ? 'selected' : '' ?>>Completed</option><option value="cancelled" <?= old('status') === 'cancelled' ? 'selected' : '' ?>>Cancelled</option></select><?php if (isset($errors['status'])): ?><div class="text-danger"><?= e($errors['status']) ?></div><?php endif; ?></div>
+    <button type="submit" class="btn">Save Appointment</button>
+</form>
