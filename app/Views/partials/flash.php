@@ -1,0 +1,2 @@
+<?php if ($msg = get_flash('success')): ?><div class="alert alert-success"><?= e($msg) ?></div><?php endif; ?>
+<?php if ($msg = get_flash('error')): ?><div class="alert alert-error"><?= e($msg) ?></div><?php endif; ?>
